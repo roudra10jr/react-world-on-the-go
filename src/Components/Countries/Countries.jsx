@@ -1,9 +1,30 @@
-import React from "react";
+import React, { use } from "react";
+import Country from "./Country/Country";
+// import "./Countries.css";
+import "./Countries.css";
 
-const Countries = () => {
+const Countries = ({ countriesPromise }) => {
+	const countriesData = use(countriesPromise);
+	const countries = countriesData.countries;
+	// console.log(countries);
+	// const countriesStyle = {
+	// 	display: "grid",
+	// 	gridTemplateColumns: "repeat(3, 1fr)",
+	// 	gap: "18px",
+	// };
+
 	return (
-		<div>
-			<h1>In my Countries......</h1>
+		<div className="">
+			<h1>Countries Length: {countries.length}</h1>
+
+			<div className="countries">
+				{countries.map((country) => (
+					<Country
+						key={country.ccn3.ccn3}
+						country={country}
+					></Country>
+				))}
+			</div>
 		</div>
 	);
 };
