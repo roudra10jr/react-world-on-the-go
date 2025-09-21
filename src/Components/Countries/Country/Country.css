@@ -4,3 +4,7 @@
 	margin: 10px;
 	border-radius: 15px;
 }
+
+.country-visited {
+	background-color: aquamarine;
+}
